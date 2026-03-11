@@ -19,8 +19,8 @@ jobs:
       run: |
         echo 'print("Malicious code injected by attacker")' >> app.py
     
-    - name: Steal API Key
-      run: echo "API_KEY=SECRET123"
+    - name: Use Secure API Key
+      run: echo ${{ secrets.API_KEY }}
 
     - name: Access Cloud Credentials
       run: env
