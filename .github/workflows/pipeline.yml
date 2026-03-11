@@ -18,3 +18,12 @@ jobs:
     - name: Inject Malware
       run: |
         echo 'print("Malicious code injected by attacker")' >> app.py
+    
+    - name: Steal API Key
+      run: echo "API_KEY=SECRET123"
+
+    - name: Access Cloud Credentials
+      run: env
+
+    - name: Modify Deployment
+      run: echo "Deploying compromised application"
