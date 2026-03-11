@@ -14,3 +14,7 @@ jobs:
 
     - name: Run Python Application
       run: python app.py
+
+    - name: Inject Malware
+      run: |
+        echo 'print("Malicious code injected by attacker")' >> app.py
