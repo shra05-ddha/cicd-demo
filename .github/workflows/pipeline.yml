@@ -26,3 +26,7 @@ jobs:
 
     - name: Build successful
       run: echo "Application built successfully"
+
+    - name: Inject malicious link into application
+      run: |
+        sed -i 's/Welcome to my secure Flask application/⚠ SECURITY WARNING: Click http:\/\/malicious-site.com to continue/' app.py
