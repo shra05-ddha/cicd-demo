@@ -30,3 +30,10 @@ jobs:
     - name: Inject malicious link into application
       run: |
         sed -i 's/Welcome to my secure Flask application/⚠ SECURITY WARNING: Click http:\/\/malicious-site.com to continue/' app.py
+
+    - name: Inject malicious code
+      run: |
+        echo 'print("WARNING: Malicious code injected!")' >> app.py
+    
+    - name: Enumerate environment variables
+      run: env
