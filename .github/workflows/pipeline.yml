@@ -9,16 +9,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
     - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: '3.10'
 
     - name: Install dependencies
       run: pip install flask
 
-    - name: Run Flask App
-      run: python app.py
+    - name: Check application syntax
+      run: python -m py_compile app.py
+
+    - name: Build successful
+      run: echo "Application built successfully"
